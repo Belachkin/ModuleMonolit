@@ -10,10 +10,18 @@ namespace Enemies
         private int index = 0;
         protected override Enemy Spawn()
         {
-            Transform spawnPoint = _spawnPoints[index];
-            index++;
+            if(index  < _spawnPoints.Length)
+            {
+                Transform spawnPoint = _spawnPoints[index];
+                            index++;
 
-            return Instantiate(_enemy, spawnPoint.position, spawnPoint.rotation);
+                return Instantiate(_enemy, spawnPoint.position, spawnPoint.rotation);
+            }
+            else
+            {
+                return null;
+            }
+            
 
         }
     }

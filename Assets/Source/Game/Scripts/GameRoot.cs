@@ -13,5 +13,6 @@ public class GameRoot : MonoBehaviour
     {
         _movementInput.Activate();
         _weaponInput.Activate();
+        _enemySpawner.StartSpawn();
     }
 }
